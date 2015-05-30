@@ -10,12 +10,17 @@ Consider a continous range of integers.
 All but one of the numbers are put into an array in any order.
 
 Example
-Range is 500 to 600 inclusive.
-There are 101 numbers in the range.
-Array has 100 items.
+Expected range is 500 to 600 inclusive.
+Expected range contains 101 numbers.
+Actual array has 100 items.
 [570, 539, 500, 517, ...]
 
 ## Plan (approximate)
+
+### Assumptions
+In a more general case, if the actual array contains consecutive numbers,
+you could say the "missing" number is at the minimum end or at the maximum end.
+To avoid ambiguity, use argument "expectedMinimum".
 
 ### Method 1: Calculate expected sum, actual sum, number is expected - actual
 Be careful to avoid number overflow.
